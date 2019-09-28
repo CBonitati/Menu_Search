@@ -25,9 +25,9 @@ def main():
     print(products)
 
 #McDonalds menu link retrieval code
-MCD_BASE = "https://www.mcdonalds.com"
+MCD_BASE = "http://www.mcdonalds.com"
 def MCD_getAllCategories():
-    url = "https://www.mcdonalds.com/us/en-us/full-menu.html"
+    url = "http://www.mcdonalds.com/us/en-us/full-menu.html"
     cat_tag_name = "mcd-category-page__link-item"
     soup = soupify(url)
     soups = soup.find_all("li", {"class":cat_tag_name})

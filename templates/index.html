@@ -20,12 +20,16 @@
 
 	<h3>Search Restaurant:</h3>
 	<div class="searchbar">
-		<form>
+		<form action="search.html">
 			<input class=barsize type="text" placeholder="Search..." required>
+			<!-- Moved the select with in the form so flask can get the data -->
+			<h3>Select Dietary Restrictions:</h3>
+			<select multiple id="restrictions" name="restrict"></select>
+			<!-- Made a submit to use the flask -->
+			<br />
+			<input type="Submit" />
 		</form>
 	</div>
-	<h3>Select Dietary Restrictions:</h3>
-	<select multiple id="restrictions" name="restrict"></select>
 </body>
 </center>
 

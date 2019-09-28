@@ -1,9 +1,10 @@
 # Putting everything in a single file for now
 from bs4 import BeautifulSoup
 import urllib.request
+import ssl
 
 
-
+ssl._create_default_https_context = ssl._create_unverified_context
 
 def dlURL(url):
     """

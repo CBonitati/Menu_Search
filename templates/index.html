@@ -31,14 +31,10 @@
 
 <script>
 var select, i, option;
-<<<<<<< HEAD
 ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Diebetic"];
-ingredients.sort();
-=======
-ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free", "Kosher", "Diebetic"]
 ingredients.sort();	
 select = document.getElementById("restrictions");
-
+// ca04d547c0426703d8cff14234ccd35400e0bd37
 for ( i = 0; i < ingredients.length; i += 1) {
 	var option = new Option(ingredients[i], ingredients[i], false);
 	select.appendChild(option);

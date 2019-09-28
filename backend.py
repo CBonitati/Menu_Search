@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import urllib.request
 import ssl
 
-
+#Create SSL Context for computers
 ssl._create_default_https_context = ssl._create_unverified_context
 
 def dlURL(url):
@@ -23,7 +23,7 @@ def soupify(url):
 def main():
     categories = MCD_getAllCategories()
     products = MCD_getProductsFromCategory(categories[1])
-    print(products)
+    print(MCD_getIngsFromProduct(products[0]))
 
 #McDonalds menu link retrieval code
 MCD_BASE = "http://www.mcdonalds.com"
@@ -46,9 +46,15 @@ def MCD_getProductsFromCategory(cat_link):
 
 #Gets ingredients from products
 def MCD_getIngsFromProduct(prod_link):
+    div_class = "nutrition__ingredients-content"
     full_url = MCD_BASE + prod_link
     print("DEBUG: url=", full_url)
     soup = soupify(full_url)
+    div = soup.find("div", {"class":div_class})
+    print(len(div))
+    p_statements = div.find_all("p", {"class":"statement ng-binding"})
+    print(p_statements)
+
 
 
 if __name__ == "__main__":

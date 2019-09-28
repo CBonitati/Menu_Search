@@ -1,5 +1,4 @@
 # Putting everything in a single file for now
-import flask
 from bs4 import BeautifulSoup
 import urllib.request
 

@@ -5,6 +5,7 @@
 <head>
 	<title>Menu Search</title>
 	<style>
+	
 	.barsize {
 		position:center;
 		width:500px;
@@ -19,15 +20,16 @@
 
 </head>
 
-<body>
-	<h1>Menu Search </h1>
-
+<body style="background-color:grey">
+	<font face="Verdana">
+	<h1>Menu Search </h1><br>
+	</font>
 	<h3>Search Restaurant:</h3>
 	<div class="searchbar" name="resSearch">
 		<form action="search.html">
-			<input class=barsize type="text" placeholder="Search..." required>
+			<input class=barsize type="text" placeholder="Search..." required><br>
 			<!-- Moved the select with in the form so flask can get the data -->
-			<h3>Select Dietary Restrictions:</h3>
+			<br><h3>Select Dietary Restrictions:</h3>
 			<select multiple id="restrictions" name="restrict"></select>
 			<!-- Made a submit to use the flask -->
 			<br />

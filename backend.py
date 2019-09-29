@@ -12,7 +12,8 @@ def welcome():
 
 @app.route('/search.html')
 def processSearch():
-    return request.args.get("resSearch")
+    values = request.form.get("resSearch")
+    return "value:" + str( values )
 
 
 if __name__ == "__main__":

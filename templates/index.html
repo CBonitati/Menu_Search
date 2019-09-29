@@ -23,7 +23,7 @@
 	<h1>Menu Search </h1>
 
 	<h3>Search Restaurant:</h3>
-	<div class="searchbar">
+	<div class="searchbar" name="resSearch">
 		<form action="search.html">
 			<input class=barsize type="text" placeholder="Search..." required>
 			<!-- Moved the select with in the form so flask can get the data -->
@@ -42,7 +42,6 @@ var select, i, option;
 ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Diebetic"];
 ingredients.sort();	
 select = document.getElementById("restrictions");
-// ca04d547c0426703d8cff14234ccd35400e0bd37
 for ( i = 0; i < ingredients.length; i += 1) {
 	var option = new Option(ingredients[i], ingredients[i], false);
 	select.appendChild(option);

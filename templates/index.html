@@ -1,4 +1,4 @@
-<!DOCTYPE: html>
+<!DOCTYPE html>
 
 <html>
 <center>
@@ -7,25 +7,30 @@
 	<style>
 	
 	body {
-		background-image: url="https://img.freepik.com/free-photo/table-with-vegetables_1112-361.jpg?size=626&ext=jpg";
+		background-image: url("vegetable-image.jpg");
+		background-size: cover
 	}
 
 	.barsize {
 		position:center;
 		width:500px;
 		height: 50px;
-		border-radius: 25px 
+		border-radius: 25px;
+		background-color:#e3e3e3; 
 	}
 	.restrictiontab {
 		position:center;
-		font-size: 15px;	
+		font-size: 15px;
 		width:200px;
 		height:200px;
+		border-radius:5px;
+		background-color:#e3e3e3;
 	}
 	.otherbarsize {
 		width:200px;
 		height:30px;
 		border-radius:25px;
+		background-color:#e3e3e3;
 	}
 	</style>
 
@@ -35,7 +40,7 @@
 	<font face="Verdana">
 	<h1>Allergy Search </h1><br>
 	</font>
-	<h3>Search Food:</h3>
+	<h2>Search Food:</h2>
 	<div class="searchbar">
 		<form action="search.html">
 			<!-- Search bar for foods -->
@@ -44,14 +49,14 @@
 			<!-- Moved the select with in the form so flask can get the data -->
 			
 			<!-- Tab for selecting dietary restrictions -->
-			<br><h3>Select Dietary Restrictions:</h3>
+			<br><h2>Select Dietary Restrictions:</h2>
 			<select multiple class=restrictiontab id="restrictions" name="restrict"></select>
 			<!-- Made a submit to use the flask -->
 			<br />
 			<input type="Submit" /><br>
 			
 			<!-- Other Search BAR -->
-			<h3>Other:</h3><br>
+			<h2>Other:</h2><br>
 			<input class=otherbarsize type="text" placeholder="Type here...">
 		</form>
 	</div>

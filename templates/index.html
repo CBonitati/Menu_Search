@@ -47,8 +47,9 @@
   		gen_label.innerHTML = ingredients[x];
   		checkbox = document.createElement("input");
   		checkbox.setAttribute("type","checkbox");
-  		checkbox.setAttribute("name","you_decide");
-  		checkbox.className = "ing_box";
+  		checkbox.setAttribute("name","checked_ingredient");
+		checkbox.setAttribute("value",
+  		// checkbox.className = "ing_box";
   		var row = document.createElement("tr");
   		var label_td = document.createElement("td");
   		var checkbox_td = document.createElement("td");
@@ -58,9 +59,6 @@
   		row.appendChild(checkbox_td);
   		table.append(row);
 	}
-
-
-
 </script>
 
 </html>

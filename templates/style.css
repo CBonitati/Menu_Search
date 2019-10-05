@@ -31,12 +31,23 @@ body {
 
 .ing_label {
 	padding-right: 150px;
+	font-size: 17px;
+	font-family: "Times New Roman";
 }
 
 .ing_box {
+	border: 3px solid #e3e3e3;
+	background-color: #ff0000;
 	
 }
 
+.checkbox_section {
+	background-color: #e3e3e3;
+	font-size:17px;
+	width: 400px;
+	border-radius: 15px;
+	border: 3px solid #8b0000;
+}
 
 
 

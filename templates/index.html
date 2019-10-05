@@ -34,6 +34,12 @@
 		border-radius:25px;
 		background-color:#e3e3e3;
 	}
+	.ing_label {
+		text-align: right;
+	}
+	.ing_box {
+		text-align: left;
+	}
 	</style>
 
 </head>
@@ -52,27 +58,36 @@
 			
 			<!-- Tab for selecting dietary restrictions -->
 			<br><h2>Select Dietary Restrictions:</h2>
-			<select multiple class=restrictiontab id="restrictions" name="restrict"></select>
+			<div class="checkbox_section"> </div>
 			<!-- Made a submit to use the flask -->
 			<br />
 			<input type="Submit" /><br>
 			
 			<!-- Other Search BAR -->
-			<h2>Other:</h2><br>
-			<input class=otherbarsize type="text" placeholder="Type here...">
+			<h3>Other:</h3><br>
+			<input class="otherbarsize" type="text" placeholder="Type here..." required>
 		</form>
 	</div>
 </body>
 </center>
 
 <script>
-var select, i, option;
 ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs"];
-ingredients.sort();	
-select = document.getElementById("restrictions");
-for ( i = 0; i < ingredients.length; i += 1) {
-	var option = new Option(ingredients[i], ingredients[i], false);
-	select.appendChild(option);
+var gen_label, checkbox, formdiv, br;
+formdiv = document.getElementsByClassName("checkbox_section")[0];
+for (var x = 0; x < ingredients.length; x++) {
+  gen_label = document.createElement("label");
+  gen_label.className = "ing_label"; 
+  br = document.createElement("br");
+  gen_label.innerHTML = ingredients[x];
+  checkbox = document.createElement("input");
+  checkbox.setAttribute("type","checkbox");
+ 
+  checkbox.setAttribute("name","you_decide");
+  checkbox.className = "ing_box"; 
+  formdiv.appendChild(gen_label);
+  formdiv.appendChild(checkbox);
+  formdiv.append(br);
 }
 </script>
 

@@ -53,15 +53,9 @@ for (var x = 0; x < ingredients.length; x++) {
   gen_label.innerHTML = ingredients[x];
   checkbox = document.createElement("input");
   checkbox.setAttribute("type","checkbox");
-<<<<<<< HEAD
   checkbox.setAttribute("name","checked_ing");
-<<<<<<< HEAD
-=======
   checkbox.setAttribute("value",makeLowerCase(ingredients[x]));
->>>>>>> 4da241b13216b071b1792edbc5ec475bf576f90d
-=======
   checkbox.setAttribute("name","you_decide");
->>>>>>> parent of 03afa1b... I am racist
   checkbox.className = "ing_box";
   var row = document.createElement("tr");
   var label_td = document.createElement("td");
@@ -71,10 +65,6 @@ for (var x = 0; x < ingredients.length; x++) {
   row.appendChild(label_td);
   row.appendChild(checkbox_td);
   table.append(row);
-}
-
-for (var i = 0; i < ingredients.length; i++) {
-	sorted.push(ingredients[i].toLowerCase());
 }
 
 </script>

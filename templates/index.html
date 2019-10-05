@@ -38,7 +38,11 @@
 </body>
 
 <script>
-
+function makeLowerCase(x) {
+	var lower = x.toLowerCase();
+	var underscored = lower.replace(/ /g, "_");
+	return underscored;
+}
 ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs"];
 var gen_label, checkbox, formdiv, br;
 var table = document.getElementById("choice_table");
@@ -49,7 +53,8 @@ for (var x = 0; x < ingredients.length; x++) {
   gen_label.innerHTML = ingredients[x];
   checkbox = document.createElement("input");
   checkbox.setAttribute("type","checkbox");
-  checkbox.setAttribute("name","you_decide");
+  checkbox.setAttribute("name","checked_ing");
+  checkbox.setAttribute("value",makeLowerCase(ingredients[x]));
   checkbox.className = "ing_box";
   var row = document.createElement("tr");
   var label_td = document.createElement("td");

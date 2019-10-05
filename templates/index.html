@@ -3,47 +3,8 @@
 <html>
 <head>
 	<title> Allergy Search </title>
-	<style>
-	
-	body {
-		background-image: url("vegetable-image.jpg");
-		background-size: cover
-	}
-
-	.barsize {
-		position: center;
-		width: 500px;
-		height: 50px;
-		border-radius: 25px;
-		background-color: #e3e3e3; 
-	}
-	.restrictiontab {
-		text-align: center;
-		font-size: 15px;
-		font-weight: "bold";
-		font-family: "Times New Roman";
-		width: 200px;
-		height: 200px;
-		border-radius: 5px;
-		background-color: #e3e3e3;
-	}
-	.otherbarsize {
-		width: 200px;
-		height: 30px;
-		border-radius: 25px;
-		background-color: #e3e3e3;
-	}
-	.ing_label {
-		
-		padding-right: 150px;
-	}
-	.ing_box {
-	
-	}
-	
-
-	</style>
-
+	<link href="style.css" rel="stylesheet" type="text/css" /> 
+	<script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
@@ -75,30 +36,31 @@
 	</div>
 	</center>
 </body>
-
-
 <script>
-ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs"];
-var gen_label, checkbox, formdiv, br;
-var table = document.getElementById("choice_table");
-formdiv = document.getElementsByClassName("checkbox_section")[0];
-for (var x = 0; x < ingredients.length; x++) {
-  gen_label = document.createElement("label");
-  gen_label.className = "ing_label"; 
-  gen_label.innerHTML = ingredients[x];
-  checkbox = document.createElement("input");
-  checkbox.setAttribute("type","checkbox");
-  checkbox.setAttribute("name","you_decide");
-  checkbox.className = "ing_box";
-  var row = document.createElement("tr");
-  var label_td = document.createElement("td");
-  var checkbox_td = document.createElement("td");
-  label_td.appendChild(gen_label);
-  checkbox_td.appendChild(checkbox);
-  row.appendChild(label_td);
-  row.appendChild(checkbox_td);
-  table.append(row);
-}
+	ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs"];
+	var gen_label, checkbox, formdiv, br;
+	var table = document.getElementById("choice_table");
+	formdiv = document.getElementsByClassName("checkbox_section")[0];
+	for (var x = 0; x < ingredients.length; x++) {
+  		gen_label = document.createElement("label");
+  		gen_label.className = "ing_label";
+  		gen_label.innerHTML = ingredients[x];
+  		checkbox = document.createElement("input");
+  		checkbox.setAttribute("type","checkbox");
+  		checkbox.setAttribute("name","you_decide");
+  		checkbox.className = "ing_box";
+  		var row = document.createElement("tr");
+  		var label_td = document.createElement("td");
+  		var checkbox_td = document.createElement("td");
+  		label_td.appendChild(gen_label);
+  		checkbox_td.appendChild(checkbox);
+  		row.appendChild(label_td);
+  		row.appendChild(checkbox_td);
+  		table.append(row);
+	}
+
+
+
 </script>
 
 </html>

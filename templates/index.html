@@ -54,10 +54,7 @@ for (var x = 0; x < ingredients.length; x++) {
   checkbox = document.createElement("input");
   checkbox.setAttribute("type","checkbox");
   checkbox.setAttribute("name","checked_ing");
-<<<<<<< HEAD
-=======
   checkbox.setAttribute("value",makeLowerCase(ingredients[x]));
->>>>>>> 4da241b13216b071b1792edbc5ec475bf576f90d
   checkbox.className = "ing_box";
   var row = document.createElement("tr");
   var label_td = document.createElement("td");
@@ -69,9 +66,6 @@ for (var x = 0; x < ingredients.length; x++) {
   table.append(row);
 }
 
-function makeLowerCase(x) {
-		return x.toLowerCase()
-}
 </script>
 
 </html>

@@ -12,7 +12,12 @@ def welcome():
 
 @app.route('/search.html')
 def processSearch():
-    values = request.form.get("resSearch")
+    food_item = request.args.get("food_item")
+    checked_ingredients = request.args.getlist("checked_ing")
+    other_ingredient_text = request.args.get("other_ings")
+    other_ingredients_list = other_ingredient_text.split(",")
+
+    
     return "value:" + str( values )
 
 

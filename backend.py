@@ -16,10 +16,13 @@ def processSearch():
     checked_ingredients = request.args.getlist("checked_ing")
     other_ingredient_text = request.args.get("other_ings")
     other_ingredients_list = other_ingredient_text.split(",")
-
+    other_ingredients_list = [ing.strip() for ing in other_ingredients_list]
     
-    return "value:" + str( values )
+    
+
+    return render_template("search.html", search_term = food_item)
 
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.static_folder = "static"
+    app.run(debug = True, host="129.21.82.137")

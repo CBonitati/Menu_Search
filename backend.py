@@ -1,4 +1,5 @@
 from flask import Flask, escape, request, render_template
+import query_builder as qb
 import sqlite3
 
 #Name of select: restrict
@@ -18,9 +19,16 @@ def processSearch():
     other_ingredients_list = other_ingredient_text.split(",")
     other_ingredients_list = [ing.strip() for ing in other_ingredients_list]
     
+    query = qb.generate_search_query([food_item], other_ingredients_list) 
     
-
-    return render_template("search.html", search_term = food_item)
+    connection = sqlite3.connect("food_db.db")
+    cursor = connection.cursor()
+    
+    rows = []
+    for row in cursor.execute( query ):
+        rows.append(row)
+    amount = len( rows )
+    return render_template("search.html", search_term = food_item, entries=rows, amount=amount)
 
 
 if __name__ == "__main__":

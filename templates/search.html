@@ -1,7 +1,60 @@
 <html>
-	<body>
-		<table class="resultTable">
+  <head>
+	  <link rel="stylesheet" type="text/css" href="search_style.css">
+	<style>
+				
+		td, th {
+		  padding-right: 10px;
+		  float: center;
+		  border: 1.4px solid black;
+		}
 
-		</table>
-	</body>
+
+		table {
+		  border: 1.4px solid black;
+		}
+
+		.resultDisplay {
+		  float: center;
+		}
+
+		h2 {
+		  text-align: center;
+		}
+
+		.searchTermLabel, .length_display {
+		  font-style: italic;
+		}
+		
+		.search_item {
+		  font-weight: bold;
+		}
+	</style>
+  </head>
+  <body>
+  <h2> Search Result</h2> <br />
+  <label class="searchTermLabel"> Search results for: </label>
+  <label class="search_item"> {{ search_term }} </label>  <br />
+  <label class="length_display"> {{ amount }} results are were found</label>
+  <br />
+  <br />
+  <center>
+  <div class='resultDisplay'>
+      <table>
+        <tr>
+          <th>Brand</th>
+          <th>Food Item</th>
+          <th>Ingredients</th>
+        </tr>
+	{% for entry in entries %}
+	  <tr>
+		  <td>{{ entry[0] }}</td>
+		  <td>{{ entry[1] }}</td>
+		  <td>{{ entry[2] }}</td>
+	  </tr>
+	{% endfor %}
+      </table>
+    </div>
+   </center>
+  </body>
 </html>

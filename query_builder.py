@@ -27,10 +27,10 @@ def expand_exlusions(item_to_expand):
     return expansion_set
 
 def gen_not_like_clause( exclusion, exclusion_column = "ingredients" ):
-    return "%s NOT LIKE %%%s%%" % (exclusion_column, exclusion)
+    return "%s NOT LIKE \'%%%s%%\'" % (exclusion_column, exclusion)
 
 def gen_inclusion( inclusion, item_column_name= "item"):
-    return "%s LIKE %%%s%%" % (item_column_name, inclusion)
+    return "%s LIKE \'%%%s%%\'" % (item_column_name, inclusion)
 
 def generate_exclusions( exclusion_list, ing_column_name="ingredients" ):
     full_exclusion_clause = " AND ".join([gen_not_like_clause(ex) for ex in exclusion_list])
@@ -44,14 +44,18 @@ def generate_inclusions( inclusions, inclusion_column_name="item"):
 def generate_search_query( inclusions, exclusions ):
     full_inclusions = generate_inclusions(inclusions)
     full_exclusions = generate_exclusions(exclusions)
-    full_query = "SELECT manufacturer, item, ingredients from foods WHERE ( %s ) AND ( %s ) COLLATE NOCASE" % ( full_inclusions, full_exclusions)
+    full_query = "SELECT manufacturer, item, ingredients from foods WHERE ( %s ) AND ( %s ) COLLATE NOCASE;" % ( full_inclusions, full_exclusions)
     return full_query
 
 # Code to test and run the query generator
 def main():
-    a = generate_search_query( ["ass"], ["nadeeka", "jenna"] )
-    print( a )
-
+    a = generate_search_query( ["cotton candy"], ["corn", "dextrose"] )
+    conn = sqlite3.connect("food_db.db")
+    curs = conn.cursor()
+    print(a)
+    for row in curs.execute( a ):
+        print(row)
+    
 
 
 if __name__ == "__main__":

@@ -17,7 +17,6 @@
 		<form action="search.html">
 			<!-- Search bar for foods -->
 			<input name="food_item" class="barsize" type="text" placeholder="Search..." required><br>
-
 			<!-- Moved the select with in the form so flask can get the data -->
 			
 			<!-- Tab for selecting dietary restrictions -->
@@ -31,10 +30,13 @@
 			
 			<!-- Other Search BAR -->
 			<h3>Other:</h3><br>
-			<input name="other_ings" class="otherbarsize" type="text" placeholder="Type here..." required>
+			<input name="other_ings" class="otherbarsize" type="text" placeholder="Type here...">
 		</form>
 	</div>
 	</center>
+	
+	<h4> <a href="submit_product.html"> Submit product </a> </h4>
+	
 </body>
 
 <script>
@@ -44,7 +46,7 @@ function makeLowerCase(x) {
 	return underscored;
 }
 
-ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs"];
+ingredients = ["Vegetarian Options", "Vegan Options", "Peanut Allergy", "Lactose Intolerance", "Celiac Disease (Gluten Free)", "Kosher", "Eggs", "Corn","Shellfish"];
 var gen_label, checkbox, formdiv, br;
 var table = document.getElementById("choice_table");
 formdiv = document.getElementsByClassName("checkbox_section")[0];

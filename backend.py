@@ -60,7 +60,7 @@ def route_product_submission():
     
     
     date = time.strftime("%m/%d/%y %T")
-    entry_tuple = (name, default_source, upc, manufacturer, date, date, ingredients)
+    entry_tuple = (name, default_source, upc, manufacturer, date, ingredients)
 
     command = """INSERT INTO Experimental(item, data_source, gtin_upc, manufacturer, date_modified, ingredients)
                 Values(?,?,?,?,?,?)"""
@@ -70,7 +70,7 @@ def route_product_submission():
     cur.execute(command, entry_tuple)
     connection.commit()
     connection.close()
-    return str(cur.lastrowid)
+    return render_template("product_submission.html", prod_name=name, prod_upc =upc)
 
 @app.route("/submit_product.html")
 def route_product_page():

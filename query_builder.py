@@ -20,7 +20,10 @@ EXPAND_MAP = {
 # Comes from the check boxes
 # Expands into a list of exclusions
 def expand_exlusions(item_to_expand):
-    expansion_set = set( EXPAND_MAP[item_to_expand] )
+    expansion_set = set() 
+
+    for item in item_to_expand:
+	    expansion_set.add(item)
     for item in expansion_set:
         if item in EXPAND_MAP.keys():
             expansion_set =  expansion_set.union( expand_exlusions(item) )
@@ -46,6 +49,12 @@ def generate_search_query( inclusions, exclusions ):
     full_exclusions = generate_exclusions(exclusions)
     full_query = "SELECT manufacturer, item, ingredients from foods WHERE ( %s ) AND ( %s ) COLLATE NOCASE;" % ( full_inclusions, full_exclusions)
     return full_query
+
+def remove_empty(lst):
+	for elem in lst:
+		if elem == "" or elem == " ":
+			lst.remove(elem)
+	return lst
 
 # Code to test and run the query generator
 def main():

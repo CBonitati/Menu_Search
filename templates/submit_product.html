@@ -1,9 +1,9 @@
 <html>
-<style>
-	td {
-		padding-right:10px
-	}
-</style>
+	<head>
+		<title> Submit Product </title>
+		<link href="spstyle.css" rel="stylesheet" type="text/css" />
+	</head>
+
 	<body>
 		<center>
 			<h1> Submit a product </h1>
@@ -11,16 +11,16 @@
 			<form action="/product_submission.html" id="product_form" >
 				<table>
 					<tr>
-						<td><span class="input_head">Product name: </span></td> <td><input name="product_name"/></td> 
+						<td><span class="input_head">Product name: </span></td> <td><textarea name="product_name"/></textarea></td> 
 					</tr>
 					<tr>
-						<td><span class="input_head">Product manufacturer: </span> </td> <td><input name="product_manufacturer"/></td> 
+						<td><span class="input_head">Product manufacturer: </span> </td> <td><textarea name="product_manufacturer"/></textarea></td> 
 					</tr>
 					<tr>
-						<td><span class="input_head">Product ingredients: </span></td> <td><input name="product_ingredients"/></td>
+						<td><span class="input_head">Product ingredients: </span></td> <td><textarea name="product_ingredients"></textarea></td>
 					</tr>
 					<tr>
-						<td><span class="input_head">Product upc: </span></td> <td><input name="product_upc" /></td> 
+						<td><span class="input_head">Product upc: </span></td> <td><textarea name="product_upc" /></textarea></td> 
 					</tr>
 				</table>
 				<br />
@@ -32,7 +32,7 @@
 		// Check for all numerical characters 
 		function isValidUpc(str) {
 			var integer = Number.parseInt(str);
-			if (Number.isInteger(integer)) {
+			if (Number.isInteger(integer)) 
 				return true;
 			}
 			return false;

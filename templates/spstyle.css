@@ -1,0 +1,15 @@
+// style sheet for submit_product.html
+
+
+td {
+	padding-right : 10px;
+}
+
+span {
+	font-size : 18px;
+}
+
+textarea {
+	font-size : 13px;
+	rows : 1em;
+}
